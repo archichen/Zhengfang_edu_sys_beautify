@@ -181,15 +181,22 @@ var notification = function() {
     let xhxm = document.getElementById("xhxm");
     let name = xhxm.innerText.replace("同学", "");
     GM_notification({
-        text: "欢迎使用苏州科技大学教务管理系统（魔改版）",
-        title: `${name}，您来啦~`,
-        image: "http://img5.imgtn.bdimg.com/it/u=3850649171,3929565142&fm=27&gp=0.jpg",
+        text: `Author: Ar.\nClick here to Star and fork me on Github.`,
+        title: `Welcome, ${name}~`,
+        image: "http://img5.imgtn.bdimg.com/it/u=3850649171,3929565142&fm=27&gp=0.jpg"
+    }, function() {
+        window.open("https://github.com/archichen/Zhengfang_edu_sys_beautify.git");
     });
 }
+
+let iframe = document.getElementsByTagName("iframe")[0];
+    iframe.onload = function() {
+        console.log(body.scrollHeight);
+    }
 
 changeBackgroundImage();    // 改变背景图片
 changeNavWord();    // 改变导航提示
 // changeMainDivPlace(); // 嵌入网页居中
 
 // 趣味弹窗
-setTimeout(notification, 3000);
+setTimeout(notification, 1);
